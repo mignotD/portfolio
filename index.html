@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mignot Dansa | Blockchain & Full-Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #5D5CDE;
+            --primary-dark: #4a49b7;
+            --secondary: #3a3a3a;
+            --light: #ffffff;
+            --dark: #181818;
+            --gray: #f5f5f5;
+            --gray-dark: #2a2a2a;
+            --transition: all 0.3s ease;
+        }
+
+        .dark {
+            --primary: #6e6de0;
+            --secondary: #e0e0e0;
+            --gray: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        body.dark {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        header.dark {
+            background-color: rgba(24, 24, 24, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dark .mobile-menu-btn {
+            color: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .dark .hero h1 {
+            color: var(--light);
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            position: relative;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            position: relative;
+            background-color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .dark .about {
+            background-color: var(--gray-dark);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .dark .section-title {
+            color: var(--light);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 80px 0;
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-item {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            background-color: var(--gray);
+            border-radius: 20px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .dark .skill-item {
+            background-color: var(--gray-dark);
+            color: var(--light);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .skill-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background-color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .dark .projects {
+            background-color: var(--gray-dark);
+        }
+
+        .project-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .dark .project-card {
+            background-color: var(--dark);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark .project-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .dark .project-title {
+            color: var(--light);
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 80px 0;
+        }
+
+        .cert-item {
+            background-color: var(--gray);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .dark .cert-item {
+            background-color: var(--gray-dark);
+        }
+
+        .cert-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .cert-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .dark .contact {
+            background-color: var(--gray-dark);
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text a {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .dark .contact-text a {
+            color: var(--light);
+        }
+
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Navigation styles for mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--light);
+                flex-direction: column;
+                padding: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .dark .nav-links {
+                background-color: var(--dark);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                margin: 1rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-img {
+                margin-bottom: 2rem;
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        /* Theme toggle switch */
+        .theme-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dark .theme-switch {
+            background-color: var(--primary);
+        }
+
+        .switch-toggle {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .dark .switch-toggle {
+            left: 27px;
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="logo">Mignot Dansa</a>
+                <div class="nav-links flex items-center space-x-6">
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-primary transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                    <div class="theme-switch" id="themeSwitch">
+                        <div class="switch-toggle">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn">Hire Me</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content flex items-center justify-between">
+                <div class="hero-text max-w-lg">
+                    <h1>Hi, I'm Mignot Dansa</h1>
+                    <h2>Aspiring Blockchain & Full-Stack Developer</h2>
+                    <p class="mb-6">
+                        Computer Science & Engineer with a passion for blockchain technology and web
+                        development.
+                        Building decentralized applications and modern web solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="#contact"
+                            class="btn bg-transparent border border-primary text-primary hover:bg-primary hover:text-white">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <div class="hero-img-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-4">
+                        I'm a Computer Science & Engineer with a passion for blockchain technology and web
+                        development.
+                        I'm diving into decentralized systems, smart contracts, and full-stack development, building
+                        projects like dApps and blockchain-based solutions.
+                    </p>
+                    <p class="mb-4">
+                        💻 As an Aspiring Blockchain Developer, I work with tools like Solidity, Ethereum, and Web3.js,
+                        while also developing web applications using React, Node.js, and MongoDB.
+                    </p>
+                    <p class="mb-4">
+                        🚀 I enjoy bridging blockchain innovation with practical web solutions. When I'm not coding, I
+                        explore tech trends, contribute to open-source projects, and collaborate in hackathons.
+                    </p>
+                </div>
+                <div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Personal Details</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                                <span>Ethiopia</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-primary"></i>
+                                <span>mignotdansa@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone mr-2 text-primary"></i>
+                                <span>Available upon request</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe mr-2 text-primary"></i>
+                                <span>mignotdansa.dev</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="skill-category">
+                    <h3><i class="fas fa-link-horizontal mr-2"></i>Blockchain</h3>
+                    <div>
+                        <span class="skill-item">Solidity</span>
+                        <span class="skill-item">Ethereum</span>
+                        <span class="skill-item">Web3.js</span>
+                        <span class="skill-item">Hardhat</span>
+                        <span class="skill-item">Truffle</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code mr-2"></i>Frontend</h3>
+                    <div>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Next.js</span>
+                        <span class="skill-item">Bootstrap 5</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server mr-2"></i>Backend</h3>
+                    <div>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-file-contract mr-2"></i>Smart Contracts</h3>
+                    <div>
+                        <span class="skill-item">OpenZeppelin</span>
+                        <span class="skill-item">Solidity Security Best Practices</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud-upload mr-2"></i>DevOps & Deployment</h3>
+                    <div>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">IPFS</span>
+                        <span class="skill-item">Vercel</span>
+                        <span class="skill-item">Netlify</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code-branch mr-2"></i>Version Control</h3>
+                    <div>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-blue-500 to-purple-600">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Decentralized Voting System</h3>
+                        <p class="project-tech">Solidity, React, Web3.js, Hardhat, IPFS</p>
+                        <p class="project-desc">A secure, transparent blockchain-based voting system.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-green-500 to-blue-500">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NFT Marketplace</h3>
+                        <p class="project-tech">Solidity, Next.js, Web3.js, IPFS</p>
+                        <p class="project-desc">Platform for minting, buying, and selling NFTs.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-yellow-500 to-red-500">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Crypto Payment Gateway</h3>
+                        <p class="project-tech">Solidity, Node.js, MongoDB, Web3.js</p>
+                        <p class="project-desc">Seamless crypto payments with multi-chain support.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-pink-500 to-purple-500">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager App</h3>
+                        <p class="project-tech">React, Node.js, Express.js, MongoDB</p>
+                        <p class="project-desc">Organize and track tasks with real-time updates.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-purple-500 to-indigo-500">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-tech">Java, HTML, CSS, JavaScript, MySQL, Servlet</p>
+                        <p class="project-desc">A system to manage library resources and operations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mignotD/Library-Management-System" target="_blank"><i
+                                    class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img bg-gradient-to-r from-blue-500 to-teal-500">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">UniVerseHub</h3>
+                        <p class="project-tech">EJS, Node.js, Express, MongoDB</p>
+                        <p class="project-desc">A centralized platform for university students to connect, share ideas,
+                            and collaborate.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mignotD/UniVerseHub" target="_blank"><i
+                                    class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title">My <span>Certifications</span></h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cert-item">
+                    <h3 class="font-semibold mb-1"><i class="fas fa-award text-primary mr-2"></i>The Web Developer
+                        Bootcamp</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Colt Steele</p>
+                </div>
+                <div class="cert-item">
+                    <h3 class="font-semibold mb-1"><i class="fas fa-award text-primary mr-2"></i>Ethereum & Solidity
+                        Development</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Udemy</p>
+                </div>
+                <div class="cert-item">
+                    <h3 class="font-semibold mb-1"><i class="fas fa-award text-primary mr-2"></i>Blockchain
+                        Specialization</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Coursera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3 class="font-semibold">Email</h3>
+                            <a href="mailto:mignotdansa@gmail.com">mignotdansa@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3 class="font-semibold">Phone</h3>
+                            <p>Available upon request</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3 class="font-semibold">Location</h3>
+                            <p>Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/mignotD" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mignot-dansa-683870268/" target="_blank"
+                            class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/mignotdansa" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <form id="contactForm" class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-primary focus:outline-none text-base"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-primary focus:outline-none text-base"
+                                placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-primary focus:outline-none text-base"
+                                placeholder="Subject" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message"
+                                class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-primary focus:outline-none text-base"
+                                placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mignot Dansa. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when a link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Theme switching
+        const themeSwitch = document.getElementById('themeSwitch');
+        const header = document.getElementById('header');
+
+        // Check for saved theme preference or set based on system preference
+        if (localStorage.getItem('theme') === 'dark' ||
+            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+            document.body.classList.add('dark');
+            header.classList.add('dark');
+        }
+
+        // Watch for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (!localStorage.getItem('theme')) {
+                if (event.matches) {
+                    document.body.classList.add('dark');
+                    header.classList.add('dark');
+                } else {
+                    document.body.classList.remove('dark');
+                    header.classList.remove('dark');
+                }
+            }
+        });
+
+        // Theme toggle switch
+        themeSwitch.addEventListener('click', () => {
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('dark');
+                header.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.add('dark');
+                header.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, this would be connected to a backend
+            // For now, just show a success message
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Form submitted:', formData);
+
+            // Show success message
+            contactForm.innerHTML = `
+                <div class="text-center py-8">
+                    <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
+                    <p>Thank you for contacting me. I'll get back to you soon.</p>
+                </div>
+            `;
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = document.body.classList.contains('dark')
+                    ? '0 4px 20px rgba(0, 0, 0, 0.5)'
+                    : '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = document.body.classList.contains('dark')
+                    ? '0 2px 10px rgba(0, 0, 0, 0.3)'
+                    : '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

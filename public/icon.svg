@@ -1,0 +1,20 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #0a0a0f; }
+      .fg { fill: #ffffff; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #ffffff; }
+      .fg { fill: #0a0a0f; }
+    }
+  </style>
+  <rect class="bg" width="180" height="180" rx="36" />
+  <g class="fg">
+    <rect x="28" y="28" width="18" height="124" rx="6" />
+    <rect x="72" y="28" width="18" height="124" rx="6" />
+    <polygon points="46,28 90,90 46,152" />
+    <rect x="108" y="28" width="18" height="124" rx="6" />
+    <path d="M126 28 C162 28 162 90 162 90 C162 90 162 152 126 152 Z" />
+  </g>
+</svg>

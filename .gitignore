@@ -1,0 +1,10 @@
+# Environment variables
+.env*.local
+
+# Lockfiles
+pnpm-lock.yaml
+
+# Common ignores
+node_modules
+.next/
+.DS_Store

@@ -21,13 +21,18 @@ export function Contact() {
     setLoading(true)
     setStatus('idle')
 
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 10000)
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       })
 
+      clearTimeout(timeout)
       const data = await response.json()
 
       if (response.ok) {
@@ -41,7 +46,11 @@ export function Contact() {
       }
     } catch (error) {
       setStatus('error')
-      setMessage('An error occurred. Please try again.')
+      setMessage(
+        error instanceof DOMException && error.name === 'AbortError'
+          ? 'Request timed out. Please check your network and try again.'
+          : 'An error occurred. Please try again.'
+      )
     } finally {
       setLoading(false)
     }

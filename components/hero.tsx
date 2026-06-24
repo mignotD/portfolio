@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { profile, techMarquee } from '@/lib/data'
 
 const containerVariants = {
@@ -54,18 +53,20 @@ export function Hero() {
               variants={itemVariants}
             >
               {/* View Work - Outlined white */}
-              <Link href="#projects">
-                <button className="px-8 py-3 rounded-full border border-white/30 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm">
-                  View Work
-                </button>
-              </Link>
+              <button
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-3 rounded-full border border-white/30 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm cursor-pointer"
+              >
+                View Work
+              </button>
 
               {/* Hire Me - Outlined white */}
-              <Link href="#contact">
-                <button className="px-8 py-3 rounded-full border border-white/40 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm">
-                  Hire Me
-                </button>
-              </Link>
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-3 rounded-full border border-white/40 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm cursor-pointer"
+              >
+                Hire Me
+              </button>
             </motion.div>
           </motion.div>
 

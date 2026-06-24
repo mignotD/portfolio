@@ -62,13 +62,14 @@ export function Navbar() {
           </div>
 
           {/* Hire Me Button - outlined white */}
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }}>
-            <Link href="#contact">
-              <button className="px-6 py-2 rounded-full border border-white/40 text-white font-medium text-sm hover:border-white/80 transition-all">
-                Hire Me
-              </button>
-            </Link>
-          </motion.div>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-6 py-2 rounded-full border border-white/40 text-white font-medium text-sm hover:border-white/80 transition-all cursor-pointer"
+          >
+            Hire Me
+          </motion.button>
 
           {/* Mobile Menu Button */}
           <motion.button

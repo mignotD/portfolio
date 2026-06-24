@@ -16,7 +16,7 @@ export function Projects() {
     : others.filter(p => p.category === activeFilter)
 
   return (
-    <section id="projects" className="relative py-32 px-4 bg-background text-foreground">
+    <section id="projects" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div 

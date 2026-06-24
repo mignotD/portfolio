@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { profile, techMarquee } from '@/lib/data'
+import { techMarquee } from '@/lib/data'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -18,7 +18,7 @@ const itemVariants = {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-background text-foreground pt-20 px-4 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-background text-foreground pt-20 px-4 overflow-hidden scroll-mt-24">
       {/* Scroll progress line indicator on left */}
       <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary to-transparent opacity-30" />
 
@@ -96,7 +96,7 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <motion.div 
-            className="flex whitespace-nowrap gap-8 text-xs text-muted font-mono"
+            className="flex whitespace-nowrap gap-8 text-xs text-muted font-mono will-change-transform"
             animate={{ x: ['0%', '-100%'] }}
             transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
           >

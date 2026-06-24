@@ -25,7 +25,7 @@ const item = {
 
 export function Blog() {
   return (
-    <section id="blog" className="py-32 px-4 bg-background">
+    <section id="blog" className="py-32 px-4 bg-background scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-20 border-b border-border pb-8"

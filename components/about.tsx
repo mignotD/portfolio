@@ -18,7 +18,7 @@ const itemVariants = {
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 px-4 bg-background text-foreground">
+    <section id="about" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header with number */}
         <motion.div 

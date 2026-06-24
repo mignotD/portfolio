@@ -9,7 +9,7 @@ export function Experience() {
   const current = experience[activeTab]
 
   return (
-    <section id="experience" className="relative py-32 px-4 bg-background text-foreground">
+    <section id="experience" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div 

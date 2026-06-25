@@ -2,7 +2,7 @@
 .env*.local
 
 # Lockfiles
-pnpm-lock.yaml
+package-lock.json
 
 # Common ignores
 node_modules

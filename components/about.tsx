@@ -18,7 +18,7 @@ const itemVariants = {
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
+    <section id="about" className="relative py-16 md:py-24 lg:py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header with number */}
         <motion.div 
@@ -28,7 +28,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
             <span className="text-muted font-mono text-xl">01 —</span> About
           </h2>
         </motion.div>

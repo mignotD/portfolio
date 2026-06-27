@@ -34,7 +34,7 @@ export function Hero() {
           >
             {/* Main heading: pure white, very large, weight 900 */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-[clamp(72px,11vw,150px)] font-black font-heading leading-[0.88] tracking-tight text-white">
+              <h1 className="text-[clamp(48px,11vw,150px)] font-black font-heading leading-[0.88] tracking-tight text-white">
                 Mignot<br />Dansa.
               </h1>
             </motion.div>
@@ -49,7 +49,7 @@ export function Hero() {
 
             {/* CTA Buttons: outlined, white border, no fill */}
             <motion.div 
-              className="flex gap-4 pt-8"
+              className="flex flex-wrap gap-4 pt-8"
               variants={itemVariants}
             >
               {/* View Work - Outlined white */}

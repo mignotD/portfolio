@@ -25,7 +25,7 @@ const item = {
 
 export function Blog() {
   return (
-    <section id="blog" className="py-32 px-4 bg-background scroll-mt-24">
+    <section id="blog" className="py-16 md:py-24 lg:py-32 px-4 bg-background scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-20 border-b border-border pb-8"
@@ -34,7 +34,7 @@ export function Blog() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
             <span className="text-muted font-mono text-xl">05 —</span> Blog
           </h2>
         </motion.div>

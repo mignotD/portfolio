@@ -16,7 +16,7 @@ export function Projects() {
     : others.filter(p => p.category === activeFilter)
 
   return (
-    <section id="projects" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
+    <section id="projects" className="relative py-16 md:py-24 lg:py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div 
@@ -26,7 +26,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
             <span className="text-muted font-mono text-xl">03 —</span> Projects
           </h2>
         </motion.div>

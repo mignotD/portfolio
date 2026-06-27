@@ -41,9 +41,9 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
           {/* Logo: MD. */}
-          <Link href="#hero" className="font-bold font-heading text-xl text-foreground hover:text-white transition-colors">
+          <Link href="#hero" className="font-bold font-heading text-lg sm:text-xl text-foreground hover:text-white transition-colors">
             MD.
           </Link>
 
@@ -61,35 +61,37 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Hire Me Button - outlined white */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-2 rounded-full border border-white/40 text-white font-medium text-sm hover:border-white/80 transition-all cursor-pointer"
-          >
-            Hire Me
-          </motion.button>
+          {/* Hire Me Button + Mobile Menu */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/40 text-white font-medium text-xs sm:text-sm hover:border-white/80 transition-all cursor-pointer whitespace-nowrap"
+            >
+              Hire Me
+            </motion.button>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            <motion.span 
-              className="block w-6 h-0.5 bg-foreground rounded"
-              animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            />
-            <motion.span 
-              className="block w-6 h-0.5 bg-foreground rounded"
-              animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-            />
-            <motion.span 
-              className="block w-6 h-0.5 bg-foreground rounded"
-              animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            />
-          </motion.button>
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 flex flex-col items-center justify-center gap-1.5"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.span 
+                className="block w-5 sm:w-6 h-0.5 bg-foreground rounded"
+                animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              />
+              <motion.span 
+                className="block w-5 sm:w-6 h-0.5 bg-foreground rounded"
+                animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+              />
+              <motion.span 
+                className="block w-5 sm:w-6 h-0.5 bg-foreground rounded"
+                animate={mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              />
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}

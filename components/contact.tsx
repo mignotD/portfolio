@@ -57,7 +57,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
+    <section id="contact" className="relative py-16 md:py-24 lg:py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div 
@@ -67,7 +67,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
             <span className="text-muted font-mono text-xl">06 —</span> Contact
           </h2>
         </motion.div>
@@ -83,7 +83,7 @@ export function Contact() {
             viewport={{ once: true }}
           >
             {/* Main heading split across lines */}
-            <h3 className="text-4xl lg:text-5xl font-bold font-heading leading-tight text-white">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight text-white">
               {"Let's"} Work
               <br />
               Together.

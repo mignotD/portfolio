@@ -9,7 +9,7 @@ export function Experience() {
   const current = experience[activeTab]
 
   return (
-    <section id="experience" className="relative py-32 px-4 bg-background text-foreground scroll-mt-24">
+    <section id="experience" className="relative py-16 md:py-24 lg:py-32 px-4 bg-background text-foreground scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div 
@@ -19,7 +19,7 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
             <span className="text-muted font-mono text-xl">02 —</span> Experience
           </h2>
         </motion.div>
@@ -27,28 +27,28 @@ export function Experience() {
         {/* Tabbed layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Left: Tabs - vertical list */}
-          <motion.div 
-            className="flex lg:flex-col gap-2 border-b lg:border-b-0 lg:border-r border-border pb-4 lg:pb-0 lg:pr-8 overflow-x-auto lg:overflow-x-visible"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {experience.map((job, idx) => (
-              <motion.button
-                key={job.id}
-                onClick={() => setActiveTab(idx)}
-                className={`text-left px-4 py-3 font-mono text-sm whitespace-nowrap lg:whitespace-normal transition-all relative flex-shrink-0 lg:flex-shrink border-l-2 ${
-                  activeTab === idx
-                    ? 'border-white text-white'
-                    : 'border-transparent text-secondary hover:text-foreground'
-                }`}
-                whileHover={{ x: 2 }}
-              >
-                <span>{job.company}</span>
-              </motion.button>
-            ))}
-          </motion.div>
+            <motion.div 
+              className="flex lg:flex-col gap-2 border-b lg:border-b-0 lg:border-r border-border pb-4 lg:pb-0 lg:pr-8 overflow-x-auto lg:overflow-x-visible scrollbar-hide"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {experience.map((job, idx) => (
+                <motion.button
+                  key={job.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`text-left px-4 py-3 font-mono text-sm whitespace-nowrap lg:whitespace-normal transition-all relative flex-shrink-0 lg:flex-shrink border-l-2 lg:border-l-2 border-b-2 lg:border-b-0 ${
+                    activeTab === idx
+                      ? 'border-white text-white'
+                      : 'border-transparent text-secondary hover:text-foreground'
+                  }`}
+                  whileHover={{ x: 2 }}
+                >
+                  <span>{job.company}</span>
+                </motion.button>
+              ))}
+            </motion.div>
 
           {/* Right: Details panel */}
           <motion.div 
@@ -66,7 +66,7 @@ export function Experience() {
               >
                 {/* Title and metadata */}
                 <div>
-                  <h3 className="text-2xl lg:text-3xl font-bold font-heading text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-white mb-2">
                     {current.title}
                   </h3>
                   <div className="flex flex-wrap gap-4 text-sm font-mono text-secondary">

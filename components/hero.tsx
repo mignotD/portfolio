@@ -34,7 +34,7 @@ export function Hero() {
           >
             {/* Main heading: pure white, very large, weight 900 */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-[clamp(48px,11vw,150px)] font-black font-heading leading-[0.88] tracking-tight text-white">
+              <h1 className="text-[clamp(48px,11vw,150px)] font-black font-heading leading-[0.88] tracking-tight text-foreground">
                 Mignot<br />Dansa.
               </h1>
             </motion.div>
@@ -55,7 +55,7 @@ export function Hero() {
               {/* View Work - Outlined white */}
               <button
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 rounded-full border border-white/30 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm cursor-pointer"
+                className="px-8 py-3 rounded-full border border-foreground/30 text-foreground hover:border-foreground/80 transition-all duration-300 font-medium text-sm cursor-pointer"
               >
                 View Work
               </button>
@@ -63,7 +63,7 @@ export function Hero() {
               {/* Hire Me - Outlined white */}
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 rounded-full border border-white/40 text-white hover:border-white/80 transition-all duration-300 font-medium text-sm cursor-pointer"
+                className="px-8 py-3 rounded-full border border-foreground/40 text-foreground hover:border-foreground/80 transition-all duration-300 font-medium text-sm cursor-pointer"
               >
                 Hire Me
               </button>

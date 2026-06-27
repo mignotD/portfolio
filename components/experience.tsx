@@ -19,7 +19,7 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
             <span className="text-muted font-mono text-xl">02 —</span> Experience
           </h2>
         </motion.div>
@@ -40,7 +40,7 @@ export function Experience() {
                   onClick={() => setActiveTab(idx)}
                   className={`text-left px-4 py-3 font-mono text-sm whitespace-nowrap lg:whitespace-normal transition-all relative flex-shrink-0 lg:flex-shrink border-l-2 lg:border-l-2 border-b-2 lg:border-b-0 ${
                     activeTab === idx
-                      ? 'border-white text-white'
+                      ? 'border-foreground text-foreground'
                       : 'border-transparent text-secondary hover:text-foreground'
                   }`}
                   whileHover={{ x: 2 }}
@@ -66,7 +66,7 @@ export function Experience() {
               >
                 {/* Title and metadata */}
                 <div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-foreground mb-2">
                     {current.title}
                   </h3>
                   <div className="flex flex-wrap gap-4 text-sm font-mono text-secondary">

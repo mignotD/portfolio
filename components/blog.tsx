@@ -34,7 +34,7 @@ export function Blog() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
             <span className="text-muted font-mono text-xl">05 —</span> Blog
           </h2>
         </motion.div>
@@ -54,7 +54,7 @@ export function Blog() {
             >
               <div className="space-y-2">
                 <div className="flex items-baseline gap-4">
-                  <h3 className="text-lg font-semibold text-white font-heading">
+                  <h3 className="text-lg font-semibold text-foreground font-heading">
                     {post.title}
                   </h3>
                 </div>
@@ -84,7 +84,7 @@ export function Blog() {
         >
           <a
             href="/blog"
-            className="text-foreground hover:text-white text-sm transition-colors"
+            className="text-foreground hover:text-foreground text-sm transition-colors"
           >
             View All Articles →
           </a>

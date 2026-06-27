@@ -37,7 +37,7 @@ export function BackToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-8 right-8 z-40 p-3 rounded-lg border border-white/40 text-white hover:border-white/80 transition-all"
+          className="fixed bottom-8 right-8 z-40 p-3 rounded-lg border border-foreground/40 text-foreground hover:border-foreground/80 transition-all"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Back to top"

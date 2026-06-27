@@ -28,7 +28,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
             <span className="text-muted font-mono text-xl">01 —</span> About
           </h2>
         </motion.div>
@@ -84,13 +84,13 @@ export function About() {
                   {/* Hexagon icon */}
                   <div className="flex-shrink-0 pt-0.5">
                     <div className="w-6 h-6 flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" className="w-full h-full text-white" fill="currentColor" opacity="0.5">
+                      <svg viewBox="0 0 24 24" className="w-full h-full text-foreground" fill="currentColor" opacity="0.5">
                         <path d="M12 2l2 1v4l2 1v4l-2 1v4l-2 1v-4l-2-1v-4l2-1v-4z" />
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-white transition-colors">
+                    <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-foreground transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-secondary text-sm mt-1">{item.description}</p>
@@ -103,7 +103,7 @@ export function About() {
             <motion.a 
               href={profile.resumePdf}
               download
-              className="inline-flex items-center gap-2 text-foreground hover:text-white hover:underline font-medium text-sm transition-colors"
+              className="inline-flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm transition-colors"
               variants={itemVariants}
               whileHover={{ x: 4 }}
             >

@@ -44,7 +44,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
           {/* Logo: MD. */}
-          <Link href="#hero" className="font-bold font-heading text-lg sm:text-xl text-foreground hover:text-white transition-colors">
+           <Link href="#hero" className="font-bold font-heading text-lg sm:text-xl text-foreground hover:text-foreground transition-colors">
             MD.
           </Link>
 
@@ -54,7 +54,7 @@ export function Navbar() {
               <motion.a
                 key={section.id}
                 href={`#${section.id}`}
-                className="text-secondary hover:text-white transition-colors"
+                className="text-secondary hover:text-foreground transition-colors"
                 whileHover={{ x: 2 }}
               >
                 <span className="text-muted">{section.number}</span> {section.label}
@@ -69,7 +69,7 @@ export function Navbar() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/40 text-white font-medium text-xs sm:text-sm hover:border-white/80 transition-all cursor-pointer whitespace-nowrap"
+              className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-foreground/40 text-foreground font-medium text-xs sm:text-sm hover:border-foreground/80 transition-all cursor-pointer whitespace-nowrap"
             >
               Hire Me
             </motion.button>
@@ -109,7 +109,7 @@ export function Navbar() {
               <motion.a
                 key={section.id}
                 href={`#${section.id}`}
-                className="text-secondary hover:text-white transition-colors"
+                className="text-secondary hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="text-muted">{section.number}</span> {section.label}

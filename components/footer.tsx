@@ -19,14 +19,14 @@ export function Footer() {
           viewport={{ once: true }}
         >
           {/* Left: Name */}
-          <div className="text-white">
+          <div className="text-foreground">
             Mignot Dansa
           </div>
 
           {/* Center: Email */}
           <a 
             href="mailto:mignotdansa33@gmail.com"
-            className="text-secondary hover:text-white transition-colors"
+            className="text-secondary hover:text-foreground transition-colors"
           >
             mignotdansa33@gmail.com
           </a>
@@ -38,7 +38,7 @@ export function Footer() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-white transition-colors"
+                className="text-secondary hover:text-foreground transition-colors"
               >
                 GitHub
               </a>
@@ -51,7 +51,7 @@ export function Footer() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-white transition-colors"
+                className="text-secondary hover:text-foreground transition-colors"
               >
                 LinkedIn
               </a>

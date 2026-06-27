@@ -67,7 +67,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
             <span className="text-muted font-mono text-xl">06 —</span> Contact
           </h2>
         </motion.div>
@@ -83,7 +83,7 @@ export function Contact() {
             viewport={{ once: true }}
           >
             {/* Main heading split across lines */}
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight text-white">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight text-foreground">
               {"Let's"} Work
               <br />
               Together.
@@ -108,19 +108,19 @@ export function Contact() {
                 <span className="text-muted">email / </span>
                 <a 
                   href={`mailto:${profile.email}`}
-                  className="text-foreground hover:text-white transition-colors"
-                >
-                  {profile.email}
-                </a>
-              </p>
-              {profile.linkedin && profile.linkedin !== 'PLACEHOLDER' && (
-                <p>
-                  <span className="text-muted">linkedin / </span>
-                  <a 
-                    href={profile.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground hover:text-white transition-colors"
+                   className="text-foreground hover:text-foreground transition-colors"
+                 >
+                   {profile.email}
+                 </a>
+               </p>
+               {profile.linkedin && profile.linkedin !== 'PLACEHOLDER' && (
+                 <p>
+                   <span className="text-muted">linkedin / </span>
+                   <a 
+                     href={profile.linkedin}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="text-foreground hover:text-foreground transition-colors"
                   >
                     @mignot
                   </a>
@@ -133,13 +133,13 @@ export function Contact() {
                     href={profile.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-white transition-colors"
-                  >
-                    @mignot
-                  </a>
-                </p>
-              )}
-            </div>
+                     className="text-foreground hover:text-foreground transition-colors"
+                   >
+                     @mignot
+                   </a>
+                 </p>
+               )}
+             </div>
           </motion.div>
 
           {/* Right: Contact Form */}
@@ -221,7 +221,7 @@ export function Contact() {
               <motion.button
                 type="submit"
                 disabled={loading}
-                className="w-full px-6 py-3 rounded-full border border-white/40 text-white font-medium hover:border-white/80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 rounded-full border border-foreground/40 text-foreground font-medium hover:border-foreground/80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: loading ? 1 : 1.02 }}
                 whileTap={{ scale: loading ? 1 : 0.98 }}
               >

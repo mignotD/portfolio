@@ -30,12 +30,12 @@ export default function BlogPage() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <Link
           href="/#blog"
-          className="font-mono text-sm text-secondary hover:text-white transition-colors inline-block mb-12"
+          className="font-mono text-sm text-secondary hover:text-foreground transition-colors inline-block mb-12"
         >
           ← Back to Home
         </Link>
 
-        <h1 className="text-5xl lg:text-6xl font-bold font-heading text-white mb-4">
+        <h1 className="text-5xl lg:text-6xl font-bold font-heading text-foreground mb-4">
           Blog
         </h1>
         <p className="text-secondary font-mono text-sm mb-16">
@@ -55,7 +55,7 @@ export default function BlogPage() {
               className="pl-4 py-4 border-l-2 border-border hover:border-foreground transition-all"
             >
               <div className="space-y-2">
-                <h2 className="text-lg font-semibold text-white font-heading">
+                <h2 className="text-lg font-semibold text-foreground font-heading">
                   {post.title}
                 </h2>
                 {post.excerpt && (

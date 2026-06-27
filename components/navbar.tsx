@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { navSections } from '@/lib/data'
+import { ThemeToggle } from './theme-toggle'
 
 export function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -61,8 +62,9 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Hire Me Button + Mobile Menu */}
+          {/* Theme Toggle + Hire Me Button + Mobile Menu */}
           <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}

@@ -166,7 +166,7 @@ export function Projects() {
                 {project.tech.slice(0, 3).map((tech) => (
                   <span 
                     key={tech}
-                    className="px-2 py-1 text-xs font-mono bg-white/5 text-secondary border border-white/10 rounded group-hover:border-white/30 transition-colors"
+                    className="px-2 py-1 text-xs font-mono bg-foreground/5 text-secondary border border-foreground/10 rounded group-hover:border-foreground/30 transition-colors"
                   >
                     {tech}
                   </span>

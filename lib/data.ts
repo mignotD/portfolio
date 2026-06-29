@@ -53,6 +53,18 @@ export const techMarquee = [
 // Experience - tabbed layout
 export const experience = [
   {
+    id: "afterquery",
+    company: "AfterQuery",
+    title: "AI Research Contractor",
+    period: "Feb 2026 – Present",
+    location: "Remote",
+    bullets: [
+      "Authored evaluation tasks for Terminal-Bench, a benchmark suite testing AI agent capabilities across file manipulation, build systems, Git, compiler engineering, and cybersecurity domains.",
+      "Designed multimodal visual labeling tasks across automotive and skilled trades domains, producing structured prompt-answer pairs with expert chain-of-thought reasoning.",
+      "Built Blueprint visual engineering benchmarks targeting frontier model difficulty, involving 20–30+ agent reasoning steps per task.",
+    ],
+  },
+  {
     id: "tecethio",
     company: "TechEthio IT Solution",
     title: "Full-Stack Developer Intern",
@@ -146,6 +158,14 @@ export const projects = [
   },
 ];
 
+// Education
+export const education = {
+  school: "Adama Science and Technology University (ASTU)",
+  degree: "BSc Computer Science and Engineering",
+  period: "Jun 2026",
+  location: "Adama, Ethiopia",
+};
+
 // Skills by category
 export const skillsByCategory = [
   {
@@ -192,9 +212,10 @@ export const leadership = {
 // Navigation sections
 export const navSections = [
   { number: "01", label: "About", id: "about" },
-  { number: "02", label: "Experience", id: "experience" },
-  { number: "03", label: "Projects", id: "projects" },
-  { number: "04", label: "Skills", id: "skills" },
-  { number: "05", label: "Blog", id: "blog" },
-  { number: "06", label: "Contact", id: "contact" },
+  { number: "02", label: "Education", id: "education" },
+  { number: "03", label: "Experience", id: "experience" },
+  { number: "04", label: "Projects", id: "projects" },
+  { number: "05", label: "Skills", id: "skills" },
+  { number: "06", label: "Blog", id: "blog" },
+  { number: "07", label: "Contact", id: "contact" },
 ];

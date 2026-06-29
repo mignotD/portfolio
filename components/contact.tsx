@@ -68,7 +68,7 @@ export function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
-            <span className="text-muted font-mono text-xl">06 —</span> Contact
+            <span className="text-muted font-mono text-xl">07 —</span> Contact
           </h2>
         </motion.div>
 

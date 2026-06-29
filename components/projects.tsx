@@ -27,7 +27,7 @@ export function Projects() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
-            <span className="text-muted font-mono text-xl">03 —</span> Projects
+            <span className="text-muted font-mono text-xl">04 —</span> Projects
           </h2>
         </motion.div>
 

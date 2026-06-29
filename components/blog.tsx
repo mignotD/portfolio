@@ -35,7 +35,7 @@ export function Blog() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold font-heading text-foreground">
-            <span className="text-muted font-mono text-xl">05 —</span> Blog
+            <span className="text-muted font-mono text-xl">06 —</span> Blog
           </h2>
         </motion.div>
 

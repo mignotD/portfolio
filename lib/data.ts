@@ -156,6 +156,19 @@ export const projects = [
     githubUrl: "https://github.com/mignotD/EduChain-Ethiopia",
     fullDescription: "Built a credential verification platform where data is stored off-chain and a cryptographic fingerprint is anchored on-chain. Designed smart contracts for credential issuance, verification, and revocation with role-gated access. Implemented public verification tools with on-chain status indicators. Developed role-based management features for educational institutions and credential issuers.",
   },
+  {
+    id: "libtrack",
+    title: "LibTrack",
+    subtitle: "Full-Stack Library Management System",
+    description: "A full-stack library management system with role-based access control, JWT authentication, and book borrowing workflows.",
+    category: "fullstack",
+    categoryLabel: "Full-Stack",
+    tech: ["Java", "Spring Boot", "React", "MySQL", "Docker"],
+    featured: false,
+    liveDemoUrl: "PLACEHOLDER",
+    githubUrl: "PLACEHOLDER",
+    fullDescription: "Built a full-stack library management system featuring role-based access control, JWT authentication, book borrowing and renewal workflows, automated overdue email notifications, and fine payment handling. Deployed via Docker Compose across three services.",
+  },
 ];
 
 // Education

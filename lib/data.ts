@@ -166,7 +166,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "React", "MySQL", "Docker"],
     featured: false,
     liveDemoUrl: "PLACEHOLDER",
-    githubUrl: "PLACEHOLDER",
+    githubUrl: "https://github.com/mignotD/LibTrack",
     fullDescription: "Built a full-stack library management system featuring role-based access control, JWT authentication, book borrowing and renewal workflows, automated overdue email notifications, and fine payment handling. Deployed via Docker Compose across three services.",
   },
 ];

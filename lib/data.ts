@@ -30,7 +30,7 @@ export const whatIDo = [
   },
   {
     title: "AI Integration",
-    description: "Practical AI-assisted features — document analysis, OCR pipelines, and serverless AI functions — integrated into production systems.",
+    description: "Practical AI assisted features, including adaptive recommendation logic, readiness scoring, and serverless AI functions, integrated into production systems.",
   },
 ];
 

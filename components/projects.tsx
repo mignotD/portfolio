@@ -13,7 +13,7 @@ export function Projects() {
   const others = projects.filter(p => !p.featured)
   const filtered = activeFilter === 'all' 
     ? others 
-    : others.filter(p => p.category === activeFilter)
+    : others.filter(p => p.categories.includes(activeFilter))
 
   return (
     <section id="projects" className="relative py-16 md:py-24 lg:py-32 px-4 bg-background text-foreground scroll-mt-24">

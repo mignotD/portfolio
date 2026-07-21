@@ -11,7 +11,7 @@ export const profile = {
   location: "Addis Ababa, Ethiopia",
   linkedin: "https://www.linkedin.com/in/mignot-dansa-683870268/",
   github: "https://github.com/mignotD",
-  resumePdf: "/Mignot_Dansa_CV.pdf",
+  resumePdf: "/Mignot_Dansa_Cv.pdf",
 };
 
 // What I do section

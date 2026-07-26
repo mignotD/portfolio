@@ -156,6 +156,19 @@ export const projects = [
     githubUrl: "https://github.com/mignotD/LibTrack",
     fullDescription: "Built a full-stack library management system featuring role-based access control, JWT authentication, book borrowing and renewal workflows, automated overdue email notifications, and fine payment handling. Deployed via Docker Compose across three services.",
   },
+  {
+    id: "talentmind",
+    title: "TalentMind",
+    subtitle: "AI-Powered Recruitment Platform",
+    description: "An AI-native recruitment platform that automates resume screening, conversational AI interviews, candidate evaluation, hiring workflows, and recruitment pipeline management.",
+    categories: ["ai", "fullstack"],
+    categoryLabel: "AI/ML",
+    tech: ["Node.js", "Express.js", "MongoDB", "OpenAI API", "Socket.IO", "Google OAuth", "Docker"],
+    featured: false,
+    liveDemoUrl: "PLACEHOLDER",
+    githubUrl: "https://github.com/mignotD/TalentMind",
+    fullDescription: "Built an AI-native recruitment platform that streamlines the entire hiring workflow — from smart resume screening and AI-conducted conversational interviews to candidate scoring and pipeline management. Integrated OpenAI-powered evaluations for objective, data-driven candidate assessments. Implemented real-time communication via Socket.IO for live interview sessions and seamless collaboration. Added Google OAuth for secure, frictionless authentication and Docker for containerized deployment across environments.",
+  },
 ];
 
 // Education

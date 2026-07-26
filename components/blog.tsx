@@ -47,30 +47,31 @@ export function Blog() {
           viewport={{ once: true }}
         >
           {blogPosts.map((post) => (
-            <motion.article
-              key={post.slug}
-              variants={item}
-              className="group pl-4 py-4 border-l-2 border-border hover:border-foreground transition-all cursor-pointer"
-            >
-              <div className="space-y-2">
-                <div className="flex items-baseline gap-4">
-                  <h3 className="text-lg font-semibold text-foreground font-heading">
-                    {post.title}
-                  </h3>
+            <Link href={`/blog/${post.slug}`}>
+              <motion.article
+                variants={item}
+                className="group pl-4 py-4 border-l-2 border-border hover:border-foreground transition-all cursor-pointer"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-baseline gap-4">
+                    <h3 className="text-lg font-semibold text-foreground font-heading">
+                      {post.title}
+                    </h3>
+                  </div>
+                  <div className="flex gap-4 font-mono text-xs text-secondary">
+                    <span>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                    <span>·</span>
+                    <span>{post.readTime}</span>
+                  </div>
                 </div>
-                <div className="flex gap-4 font-mono text-xs text-secondary">
-                  <span>
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
-                  <span>·</span>
-                  <span>{post.readTime}</span>
-                </div>
-              </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </motion.div>
 

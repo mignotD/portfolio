@@ -48,6 +48,9 @@ export const techMarquee = [
   "MongoDB",
   "React Native",
   "REST APIs",
+  "OpenAI API",
+  "Socket.IO",
+  "OAuth",
 ];
 
 // Experience - tabbed layout
@@ -201,17 +204,306 @@ export const skillsByCategory = [
     category: "DevOps & Tools",
     skills: ["Git", "Docker", "CI/CD", "Linux", "Postman"],
   },
+  {
+    category: "AI & Integrations",
+    skills: ["OpenAI API", "LLM Integration", "OpenCV", "REST APIs", "OAuth", "Socket.IO"],
+  },
 ];
 
 // Blog posts
 export const blogPosts = [
   {
-    id: "ai-kyc-pipeline",
-    title: "How I Built an AI-Powered KYC Pipeline with FastAPI and Tesseract OCR",
-    excerpt: "A deep dive into building a production-grade identity verification pipeline — from image preprocessing and OCR to confidence scoring and fraud detection.",
-    date: "2026-06-01",
-    readTime: "8 min read",
-    slug: "ai-kyc-pipeline-fastapi-tesseract",
+    id: "building-talentmind",
+    title: "Building TalentMind: An AI-Native Recruitment Platform with Node.js, MongoDB, and LLMs",
+    excerpt: "Recruitment is still surprisingly manual. Recruiters spend countless hours reviewing resumes, scheduling interviews, comparing candidates, and moving applicants through hiring pipelines. While AI has become increasingly capable, many hiring platforms still use it only as an optional feature rather than integrating it throughout the hiring process. I wanted to explore a different approach.",
+    date: "2026-07-01",
+    readTime: "12 min read",
+    slug: "building-talentmind-ai-recruitment-platform",
+    content: `## Introduction
+
+Recruitment is still surprisingly manual. Recruiters spend countless hours reviewing resumes, scheduling interviews, comparing candidates, and moving applicants through hiring pipelines. While AI has become increasingly capable, many hiring platforms still use it only as an optional feature rather than integrating it throughout the hiring process.
+
+I wanted to explore a different approach.
+
+TalentMind is a full-stack, AI-native recruitment platform that combines modern web technologies with Large Language Models (LLMs) to automate candidate screening, conduct conversational interviews, analyze responses, and help recruiters make more informed hiring decisions.
+
+This project was built to simulate how a modern AI-first hiring platform could work in production while solving real engineering challenges around authentication, AI integration, real-time communication, security, and workflow automation.
+
+---
+
+## Why I Built TalentMind
+
+The original idea was simple:
+
+> What if recruiters only needed to review qualified candidates instead of every applicant?
+
+Instead of asking recruiters to manually filter hundreds of resumes, I wanted AI to handle repetitive tasks while allowing humans to make the final hiring decisions.
+
+TalentMind was designed to automate:
+
+- Resume screening
+- Candidate interviews
+- Personality analysis
+- Hiring recommendations
+- Interview scheduling
+- Recruitment pipeline management
+
+without removing recruiters from the decision-making process.
+
+---
+
+## Technology Stack
+
+I intentionally selected technologies commonly used in production backend systems.
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+### Frontend
+
+- EJS
+- HTML
+- CSS
+- JavaScript
+
+### Authentication
+
+- Google OAuth 2.0
+- bcrypt
+
+### AI
+
+- OpenAI-compatible APIs
+- Prompt engineering
+- Resume parsing
+- Personality analysis
+- Interview generation
+
+### Real-time
+
+- Socket.IO
+
+### DevOps
+
+- Docker
+- Docker Compose
+
+### Integrations
+
+- SendGrid
+- Nodemailer
+- Google OAuth
+- Webhooks
+
+---
+
+## Designing the Architecture
+
+One of my goals was to organize the project similarly to a production application instead of a small demo.
+
+The project separates responsibilities into:
+
+- Route handlers
+- Controllers
+- Database models
+- Authentication
+- AI services
+- Utility modules
+- Middleware
+- Real-time communication
+- Audit logging
+
+This separation made it easier to add new features without creating tightly coupled code.
+
+---
+
+## AI-Powered Resume Screening
+
+One of the first features I implemented was AI resume parsing.
+
+Candidates can upload resumes in multiple formats.
+
+Instead of relying only on regular expressions, the application sends the extracted content to an LLM which identifies:
+
+- Candidate information
+- Skills
+- Experience
+- Education
+- Contact information
+
+The parsed information automatically populates the candidate profile.
+
+This removes repetitive manual data entry while producing structured candidate records.
+
+---
+
+## Conversational AI Interviews
+
+The most interesting part of the project was building the AI interviewer.
+
+Instead of multiple-choice questions, candidates interact with an AI chatbot.
+
+The interviewer generates role-specific questions dynamically and evaluates responses throughout the conversation.
+
+Rather than simply storing answers, the platform analyzes communication quality and overall candidate performance.
+
+This creates interviews that feel significantly more natural than traditional application forms.
+
+---
+
+## Candidate Evaluation
+
+Once an interview is complete, TalentMind performs several AI analyses.
+
+These include:
+
+- Skill matching
+- Personality analysis
+- Emotional tone analysis
+- Overall candidate scoring
+
+Rather than relying on a single score, the platform combines multiple signals into a weighted recommendation that recruiters can review alongside the original interview.
+
+The objective is to assist—not replace—human decision making.
+
+---
+
+## Building the Recruitment Pipeline
+
+Recruitment is more than interviewing.
+
+Companies need to move applicants through multiple stages.
+
+I implemented a Kanban-style recruitment pipeline that allows recruiters to manage candidates from:
+
+Applied → Screening → Interview → Assessment → Offer → Hired / Rejected
+
+Each transition automatically updates application status and helps visualize hiring progress.
+
+---
+
+## Authentication and Security
+
+Security was an important consideration throughout the project.
+
+The platform supports:
+
+- Google OAuth authentication
+- Secure password hashing
+- Role-based authorization
+- Protected routes
+- Input validation
+- Rate limiting
+- Secure HTTP headers
+
+Administrative actions are also recorded in an immutable audit log, allowing organizations to review who performed sensitive operations.
+
+---
+
+## Real-Time Communication
+
+Recruitment often requires communication between candidates and recruiters.
+
+Using Socket.IO, I implemented real-time messaging that supports:
+
+- Instant messaging
+- Typing indicators
+- Persistent conversations
+
+This removes the need for external communication tools during the hiring process.
+
+---
+
+## Interview Scheduling
+
+Another challenge was coordinating interviews.
+
+Instead of exchanging multiple emails, recruiters propose available time slots while candidates simply choose one.
+
+Once confirmed, the candidate automatically progresses through the recruitment pipeline.
+
+This significantly reduces scheduling friction.
+
+---
+
+## AI Beyond Interviews
+
+After completing the core hiring workflow, I expanded AI usage throughout the platform.
+
+Additional AI capabilities include:
+
+- Job description bias detection
+- Interview question generation
+- Resume parsing
+- Career chatbot
+- Offer letter generation
+
+These features demonstrate how AI can improve multiple stages of recruitment instead of being isolated to a single feature.
+
+---
+
+## Engineering Challenges
+
+Building TalentMind involved solving several engineering challenges beyond simply integrating an LLM.
+
+Some of the problems included:
+
+- Designing scalable REST APIs
+- Managing authentication flows
+- Integrating external AI providers
+- Organizing modular backend architecture
+- Handling asynchronous workflows
+- Building secure authorization logic
+- Designing reusable database models
+- Maintaining clean separation of concerns
+- Supporting real-time communication
+
+Each feature required balancing functionality, maintainability, and scalability.
+
+---
+
+## Lessons Learned
+
+TalentMind taught me that building AI products involves much more than calling an API.
+
+The real complexity lies in designing reliable systems around AI, validating responses, securing user data, handling failures gracefully, and integrating AI into existing business workflows.
+
+It also reinforced the importance of building modular architectures that remain maintainable as projects grow.
+
+---
+
+## Future Improvements
+
+Although the platform is fully functional, there are several areas I would like to continue exploring.
+
+These include:
+
+- Calendar synchronization
+- ATS integrations
+- Mobile application
+- Advanced recommendation models
+- Voice interviews
+- Fraud detection
+- Multi-tenant architecture
+- Vector search for candidate matching
+
+---
+
+## Final Thoughts
+
+TalentMind became much more than an AI recruitment application.
+
+It evolved into an opportunity to explore production backend engineering, distributed system design, AI integration, authentication, workflow automation, and modern software architecture within a single project.
+
+More importantly, it reinforced a principle I strongly believe in:
+
+**AI should enhance human decision-making rather than replace it.** The best software combines intelligent automation with transparency, giving people better tools instead of taking control away from them.
+
+Building TalentMind challenged me to think beyond writing code and focus on designing systems that are scalable, maintainable, and genuinely useful in real-world hiring workflows.`,
   },
 ];
 

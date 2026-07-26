@@ -49,33 +49,34 @@ export default function BlogPage() {
           animate="show"
         >
           {blogPosts.map((post) => (
-            <motion.article
-              key={post.slug}
-              variants={item}
-              className="pl-4 py-4 border-l-2 border-border hover:border-foreground transition-all"
-            >
-              <div className="space-y-2">
-                <h2 className="text-lg font-semibold text-foreground font-heading">
-                  {post.title}
-                </h2>
-                {post.excerpt && (
-                  <p className="text-sm text-secondary leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                )}
-                <div className="flex gap-4 font-mono text-xs text-secondary">
-                  <span>
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
-                  <span>·</span>
-                  <span>{post.readTime}</span>
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <motion.article
+                variants={item}
+                className="pl-4 py-4 border-l-2 border-border hover:border-foreground transition-all cursor-pointer"
+              >
+                <div className="space-y-2">
+                  <h2 className="text-lg font-semibold text-foreground font-heading">
+                    {post.title}
+                  </h2>
+                  {post.excerpt && (
+                    <p className="text-sm text-secondary leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  )}
+                  <div className="flex gap-4 font-mono text-xs text-secondary">
+                    <span>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                    <span>·</span>
+                    <span>{post.readTime}</span>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </motion.div>
       </div>

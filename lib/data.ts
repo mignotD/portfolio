@@ -11,7 +11,7 @@ export const profile = {
   location: "Addis Ababa, Ethiopia",
   linkedin: "https://www.linkedin.com/in/mignot-dansa-683870268/",
   github: "https://github.com/mignotD",
-  resumePdf: "/Mignot_Dansa_Cv.pdf",
+  resumePdf: "/Mignot_Dansa_CV.pdf",
 };
 
 // What I do section
@@ -70,8 +70,8 @@ export const experience = [
   {
     id: "tecethio",
     company: "TechEthio IT Solution",
-    title: "Full-Stack Developer Intern",
-    period: "Jun 2025 – Aug 2025",
+    title: "Full-Stack Developer",
+    period: "Jun 2023 – Aug 2023",
     location: "Addis Ababa",
     bullets: [
       "Developed responsive web applications using React.js, Node.js, and PostgreSQL.",
